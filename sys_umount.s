@@ -4,13 +4,13 @@ global _umount
 
 section .rodata
 	sucess db "/mnt Unmount Succes :D", 10, 0
-	file_umount db "/mnt", 0
+	file db "/mnt", 0
 
 section .text
 
 _umount:
 	mov rax, 166
-	mov rdi, file_umount
+	mov rdi, file
 	mov rsi, 02
 	syscall
 	jmp _exit
